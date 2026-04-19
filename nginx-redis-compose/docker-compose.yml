@@ -1,0 +1,17 @@
+services:
+
+  nginx:
+    image: nginx
+    container_name: nginx_server
+    ports:
+      - "8085:80"
+    networks:
+      - appnetwork
+
+  redis:
+    image: redis
+    networks:
+      - appnetwork
+
+networks:
+  appnetwork:
